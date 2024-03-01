@@ -63,6 +63,8 @@ jobs:
       run: echo $GITHUB_ENV
 
     - name: Put current date into a variable to append to uploaded Artifact zip file
+      variables:
+        PRESENT_TIME: ''
       run: |
         PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
         echo "$PRESENT_TIME"
