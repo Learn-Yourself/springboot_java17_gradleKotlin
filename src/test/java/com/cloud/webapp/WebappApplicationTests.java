@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 class WebappApplicationTests {
 
     @Test
-    public void contextLoads() throws Exception {
-        assertThat().isNotNull();
-    }
+    void contextLoads() {
+	}
 }
