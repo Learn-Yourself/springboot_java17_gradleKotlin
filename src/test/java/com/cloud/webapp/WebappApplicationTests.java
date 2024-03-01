@@ -7,14 +7,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 class WebappApplicationTests {
 
     @Autowired
-    private MyController myController;
-
-    @Autowired
-    private MyService myService;
+    private WebappApplication webappApplicationebappApplication;
 
     @Test
     public void contextLoads() throws Exception {
-        assertThat(myController).isNotNull();
-        assertThat(myService).isNotNull();
+        assertThat(webappApplicationebappApplication).isNotNull();
     }
 }
