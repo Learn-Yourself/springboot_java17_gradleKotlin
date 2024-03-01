@@ -75,7 +75,7 @@ jobs:
       uses: actions/upload-artifact@v4.3.1
       with:
         # Artifact name
-        name: artifact-Wildcard-$(date +%Y-%m-%d-%H-%M-%S)
+        name: artifact-Wildcard-(date +%Y-%m-%d-%H-%M-%S)
         # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
         path: ./build/**/*.jar
