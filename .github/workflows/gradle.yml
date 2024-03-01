@@ -69,6 +69,8 @@ jobs:
         overwrite: false
       run: | 
         PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
+        echo "$PRESENT_TIME"
+        echo "${{ PRESENT_TIME }}"
       env:
           PRESENT_TIME: ${{ PRESENT_TIME }}
 
