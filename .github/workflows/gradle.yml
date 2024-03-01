@@ -15,8 +15,8 @@ on:
 
 env:
   PRESENT_TIME: ''
-  - script: echo "$(date +%Y-%m-%d-%H-%M-%S)" >> PRESENT_TIME
-      
+  script: echo "$(date +%Y-%m-%d-%H-%M-%S)" >> "$PRESENT_TIME"
+
 jobs:
   build:
 
@@ -51,14 +51,14 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew clean build test --build-cache --stacktrace
    
-    - name: cat index file
-      run: ls -lRah build && cat ./build/reports/tests/test/index.html
+    #- name: cat index file
+    #  run: ls -lRah build && cat ./build/reports/tests/test/index.html
 
-    - name: Global variables
-      run: git config --system -l
+    #- name: Global variables
+    #  run: git config --system -l
 
-    - name: Repository variables
-      run: git config -l
+    #- name: Repository variables
+    #  run: git config -l
 
     - name: GITHUB variables
       run: echo $GITHUB_ENV
