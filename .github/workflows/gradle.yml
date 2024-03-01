@@ -37,7 +37,7 @@ jobs:
       run: chmod +755 ./gradlew
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew build --scan --warning-mode all
+      run: ./gradlew build --scan
 
 
     - name: Upload a Build Artifact
