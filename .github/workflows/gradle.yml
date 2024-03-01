@@ -43,7 +43,7 @@ jobs:
       run: pwd
       
     - name: cat index file
-      run: cat ./springboot_java17_gradleKotlin/build/reports/tests/test/index.html
+      run: ls -lah build && cat ./build/reports/tests/test/index.html
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
