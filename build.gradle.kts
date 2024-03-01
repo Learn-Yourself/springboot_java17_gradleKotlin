@@ -28,6 +28,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	implementation("org.springframework.cloud:spring-cloud-starter-vault-config")
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation("io.projectreactor:reactor-test")
