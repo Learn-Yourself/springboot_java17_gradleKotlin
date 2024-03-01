@@ -60,8 +60,8 @@ jobs:
     #- name: Repository variables
     #  run: git config -l
 
-    - name: GITHUB variables
-      run: echo $GITHUB_ENV
+    #- name: GITHUB variables
+    #  run: echo $GITHUB_ENV
 
     #- name: Put current date into a variable to append to uploaded Artifact zip file
     #  run: | 
@@ -76,7 +76,7 @@ jobs:
       uses: actions/upload-artifact@v4.3.1
       with:
         # Artifact name
-        name: artifact-Wildcard-$PRESENT_TIME
+        name: artifact-Wildcard-${{ PRESENT_TIME }}
         # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
         path: ./build/**/*.jar
