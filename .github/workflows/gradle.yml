@@ -43,15 +43,16 @@ jobs:
       run: pwd
       
     - name: cat index file
-      run: ls -lah build && cat ./build/reports/tests/test/index.html
+      run: ls -lRah build && cat ./build/reports/tests/test/index.html
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
       with:
         # Artifact name
-        name: artifact # optional, default is artifact
+        name: artifact-Wildcard-${{ steps.date.outputs.date }} # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: 
+        path: ./build/**/*.jar
+        
         # The desired behavior if no files are found using the provided path.
         # Available Options:
         # warn: Output a warning but do not fail the action
