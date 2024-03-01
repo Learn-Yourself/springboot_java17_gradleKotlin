@@ -62,25 +62,17 @@ jobs:
     - name: GITHUB variables
       run: echo $GITHUB_ENV
 
-    - name: Put current date into a variable
+    - name: Put current date into a variable to append to uploaded Artifact zip file
       run: |
-        $NOW=& Get-Date -format yyyy-MM-dd
-        echo "NOW=$NOW" >> $env:GITHUB_ENV
-    - name: Use variable
-      run: |
-        echo "${{env.NOW}}"
-
-    #- name: Put current date into a variable to append to uploaded Artifact zip file
-    #  run: |
-    #    PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
-    #    echo "PRESENT_TIME=$PRESENT_TIME" >> $env:GITHUB_ENV
-    #    echo "${{env:GITHUB_ENV}}"
+        PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
+        echo "PRESENT_TIME=$PRESENT_TIME" >> $env:GITHUB_ENV
+        echo "${{env:GITHUB_ENV}}"
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
       with:
         # Artifact name
-        name: artifact-Wildcard-"${{env.NOW}}"
+        name: artifact-Wildcard-"${{PRESENT_TIME}}"
         # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
         path: ./build/**/*.jar
