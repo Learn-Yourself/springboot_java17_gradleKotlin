@@ -20,9 +20,6 @@ jobs:
     permissions:
       contents: read
 
-    variables:
-        PRESENT_TIME: ''
-
     steps:
     - name: Code checkout
       uses: actions/checkout@v4
@@ -66,10 +63,9 @@ jobs:
       run: echo $GITHUB_ENV
 
     - name: Put current date into a variable to append to uploaded Artifact zip file
-      run: |
+      run: | 
         PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
         echo "$PRESENT_TIME"
-        echo "${{PRESENT_TIME}}"
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
