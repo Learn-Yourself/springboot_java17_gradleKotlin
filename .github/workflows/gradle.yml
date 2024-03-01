@@ -46,9 +46,6 @@ jobs:
     - name: cat index file
       run: ls -lRah build && cat ./build/reports/tests/test/index.html
 
-    - name: System-wide variables
-      run: git config --global -l
-
     - name: Global variables
       run: git config --system -l
 
