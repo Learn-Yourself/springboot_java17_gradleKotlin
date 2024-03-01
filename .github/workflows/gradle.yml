@@ -14,8 +14,9 @@ on:
     branches: [ "main" ]
 
 env:
-  PRESENT_TIME: '$(date +"%Y-%m-%d-%H-%M-%S")'
-
+  PRESENT_TIME: ''
+  - script: echo "$(date +%Y-%m-%d-%H-%M-%S)" >> PRESENT_TIME
+      
 jobs:
   build:
 
