@@ -58,7 +58,7 @@ jobs:
     #    PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
     #    echo "$PRESENT_TIME"
     - name: Dynamically set PRESENT_TIME environment variable
-      run: echo "PRESENT_TIME=(date +%Y-%m-%d-%H-%M-%S)" >> $GITHUB_ENV
+      run: echo "PRESENT_TIME=$(date +%Y-%m-%d-%H-%M-%S)" >> $GITHUB_ENV
     - name: Test PRESENT_TIME variable
       run: echo ${{ env.PRESENT_TIME }}
 
