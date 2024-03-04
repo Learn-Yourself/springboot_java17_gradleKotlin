@@ -50,17 +50,12 @@ jobs:
     #- name: Repository variables
     #  run: git config -l
 
-    #- name: GITHUB variables
-    #  run: echo $GITHUB_ENV
+    - name: GITHUB variables
+      run: echo $GITHUB_ENV
 
-    #- name: Put current date into a variable to append to uploaded Artifact zip file
-    #  run: | 
-    #    PRESENT_TIME=$(date +"%Y-%m-%d-%H-%M-%S")
-    #    echo "$PRESENT_TIME"
+    # Put current date into a variable to append to Artifact zip file
     - name: Dynamically set PRESENT_TIME environment variable
       run: echo "PRESENT_TIME=$(date +%Y-%m-%d-%H-%M-%S)" >> $GITHUB_ENV
-    - name: Test PRESENT_TIME variable
-      run: echo ${{ env.PRESENT_TIME }}
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
@@ -71,8 +66,6 @@ jobs:
         retention-days: 1
         compression-level: 5
         overwrite: false
-      #env:
-      #  PRESENT_TIME: $(date +%Y-%m-%d-%H-%M-%S)
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
