@@ -10,7 +10,7 @@ public class WebappApplication {
 	
 	@GetMapping("/")
 	String home() {
-		return "Spring is here!";
+		return "Srikanth is here!";
 	}
 
 	public static void main(String[] args) {
