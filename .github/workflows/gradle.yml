@@ -65,7 +65,7 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
       with:
-        name: artifact-Wildcard-$PRESENT_TIME
+        name: artifact-Wildcard-${{ env.PRESENT_TIME }}
         path: ./build/**/*.jar
         if-no-files-found: warn
         retention-days: 1
